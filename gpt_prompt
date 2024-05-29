@@ -1,0 +1,50 @@
+Create a web application that will allow someone to track their tasks using an Agile/Scrum approach similar to Trello by Atlassian. Tasks will be added to cards, and columns will be used to determine the workflow and current status of each task.
+
+Technology Stack:
+- Backend: Express.js
+- Frontend: Vue.js
+- Database: MySQL
+
+Requirements:
+1. **Virtual Environment:**
+   - Implement a virtual environment similar to Python's venv for this project. Is it possible with this approach?
+
+2. **Containerization:**
+   - Establish the web application in a Kubernetes Helm containerization environment.
+
+3. **Development Environment:**
+   - Development will be done using VS Code and the Terminal will utilize WSL (Ubuntu).
+
+4. **Infrastructure Automation:**
+   - Utilize scripts such as Ansible or Terraform to automate the infrastructure setup, making the process reusable.
+
+Backend:
+- The backend structure should be modular and well-organized to ensure easy management and scalability. This modularity should also facilitate easier troubleshooting.
+
+Frontend:
+- The visuals need to be clean, with rounded edges where possible, drop shadows, and good contrast for visually challenged users.
+- Customization options for windows, backgrounds, etc., from a settings menu.
+- The general view should be simple, showing minimal content unless a button is clicked to open a panel for settings, preferences, adjustments, action items, etc.
+- User data will be stored in customizable cards that hold task-related information.
+
+Authentication and User Management:
+- Implement user authentication and management with role-based access control.
+
+Roles and Permissions:
+- **System Administrator**: Has full access to all features and settings within the web application, without any restrictions.
+  
+- **Project Roles**:
+  - **Project Owner**: Has full control over the project, including deletion and renaming, and all permissions of roles below.
+  - **Project Lead**: Has access to all project features and settings except deletion and renaming of the project, and all permissions of roles below.
+  - **Member**: Can add, edit, and remove their own cards within the project and view all cards, but cannot access project settings or manage others' cards.
+  - **Guest**: Can only view cards within the project; no permissions to add, edit, remove cards, or access project settings.
+
+Role Assignment:
+- System Administrators can assign/edit members of any roles.
+- Project Owners can assign a co-owner and assign/edit members of any lower roles.
+- Project Leads can assign another Project Lead and assign/edit members of any lower roles.
+
+Containerization:
+- The entire application will need to use Kubernetes Helm Containerization as the infrastructure.
+- Provide the necessary steps, commands, and files to accomplish this.
+- Ensure all templates in Helm do not contain static data; all data in the templates must be supplied by the values.yaml.
