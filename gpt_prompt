@@ -2,7 +2,7 @@ Create a web application that will allow someone to track their tasks using an A
 
 Technology Stack:
 - Backend: Express.js
-- Frontend: Vue.js
+- Frontend: React.js
 - Database: MySQL
 
 Requirements:
@@ -47,4 +47,9 @@ Role Assignment:
 Containerization:
 - The entire application will need to use Kubernetes Helm Containerization as the infrastructure.
 - Provide the necessary steps, commands, and files to accomplish this.
-- Ensure all templates in Helm do not contain static data; all data in the templates must be supplied by the values.yaml.
+- Ensure all templates in Helm do not contain static data; all data in the templates must be supplied by the values.yaml that can be without breaking standard schemas.
+
+Initial Features:
+- Ability to Assign members/users to cards, whether it be themselves or by someone else who has permission to edit the cards.
+- Account Management - Password Management, Password Recovery, Setup/Change Display Name, Change Email Address
+- Notifications via Email - Will be using GMail SMTP to acheive this
