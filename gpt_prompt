@@ -1,55 +1,55 @@
-Create a web application that will allow someone to track their tasks using an Agile/Scrum approach similar to Trello by Atlassian. Tasks will be added to cards, and columns will be used to determine the workflow and current status of each task.
+Create a web application for task tracking using an Agile/Scrum approach, similar to Trello by Atlassian. The application will feature task cards and workflow columns to indicate the status of each task.
 
-Technology Stack:
-- Backend: Express.js
-- Frontend: React.js
-- Database: MySQL
+**Technology Stack:**
+- **Backend:** Express.js
+- **Frontend:** Vite
+- **Database:** MySQL
 
-Requirements:
+**Requirements:**
+
 1. **Virtual Environment:**
-   - Implement a virtual environment similar to Python's venv for this project. Is it possible with this approach?
+   - Implement a virtual environment akin to Python's venv for this project. Is this feasible with the chosen stack?
 
 2. **Containerization:**
-   - Establish the web application in a Kubernetes Helm containerization environment.
+   - Deploy the web application using Kubernetes Helm for containerization.
 
 3. **Development Environment:**
-   - Development will be done using VS Code and the Terminal will utilize WSL (Ubuntu).
+   - Utilize VS Code for development, with the terminal running on WSL (Ubuntu).
 
 4. **Infrastructure Automation:**
-   - Utilize scripts such as Ansible or Terraform to automate the infrastructure setup, making the process reusable.
+   - Use automation tools like Ansible or Terraform to streamline infrastructure setup, ensuring reusability.
 
-Backend:
-- The backend structure should be modular and well-organized to ensure easy management and scalability. This modularity should also facilitate easier troubleshooting.
+**Backend:**
+- Design a modular and organized backend structure for easy management, scalability, and troubleshooting.
 
-Frontend:
-- The visuals need to be clean, with rounded edges where possible, drop shadows, and good contrast for visually challenged users.
-- Customization options for windows, backgrounds, etc., from a settings menu.
-- The general view should be simple, showing minimal content unless a button is clicked to open a panel for settings, preferences, adjustments, action items, etc.
-- User data will be stored in customizable cards that hold task-related information.
+**Frontend:**
+- Ensure clean visuals with rounded edges, drop shadows, and high contrast for accessibility.
+- Include customization options for UI elements via a settings menu.
+- Maintain a simple interface, revealing additional content through interactive panels.
+- Store user data in customizable task cards.
 
-Authentication and User Management:
-- Implement user authentication and management with role-based access control.
+**Authentication and User Management:**
+- Implement user authentication with role-based access control.
 
-Roles and Permissions:
-- **System Administrator**: Has full access to all features and settings within the web application, without any restrictions.
-  
-- **Project Roles**:
-  - **Project Owner**: Has full control over the project, including deletion and renaming, and all permissions of roles below.
-  - **Project Lead**: Has access to all project features and settings except deletion and renaming of the project, and all permissions of roles below.
-  - **Member**: Can add, edit, and remove their own cards within the project and view all cards, but cannot access project settings or manage others' cards.
-  - **Guest**: Can only view cards within the project; no permissions to add, edit, remove cards, or access project settings.
+**Roles and Permissions:**
+- **System Administrator:** Full access to all features and settings.
+- **Project Roles:**
+  - **Project Owner:** Full project control, including deletion and renaming, plus all permissions of lower roles.
+  - **Project Lead:** Access to all project features except deletion and renaming, plus all permissions of lower roles.
+  - **Member:** Can manage their own cards and view all cards, but cannot alter project settings or others' cards.
+  - **Guest:** View-only access to project cards.
 
-Role Assignment:
-- System Administrators can assign/edit members of any roles.
-- Project Owners can assign a co-owner and assign/edit members of any lower roles.
-- Project Leads can assign another Project Lead and assign/edit members of any lower roles.
+**Role Assignment:**
+- System Administrators can manage all roles.
+- Project Owners can assign co-owners and manage lower roles.
+- Project Leads can assign other leads and manage lower roles.
 
-Containerization:
-- The entire application will need to use Kubernetes Helm Containerization as the infrastructure.
-- Provide the necessary steps, commands, and files to accomplish this.
-- Ensure all templates in Helm do not contain static data; all data in the templates must be supplied by the values.yaml that can be without breaking standard schemas.
+**Containerization:**
+- Use Kubernetes Helm for the entire application infrastructure.
+- Provide steps, commands, and files for setup.
+- Ensure Helm templates are dynamic, with data supplied via `values.yaml` without breaking standard schemas.
 
-Initial Features:
-- Ability to Assign members/users to cards, whether it be themselves or by someone else who has permission to edit the cards.
-- Account Management - Password Management, Password Recovery, Setup/Change Display Name, Change Email Address
-- Notifications via Email - Will be using GMail SMTP to acheive this
+**Initial Features:**
+- Assign members to cards, with permissions for self-assignment or by authorized users.
+- Account management features: password management, recovery, display name setup/change, email change.
+- Email notifications using Gmail SMTP.
