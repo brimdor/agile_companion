@@ -2,13 +2,13 @@ Create a web application for task tracking using an Agile/Scrum approach, simila
 
 **Technology Stack:**
 - **Backend:** Express.js
-- **Frontend:** Vite
+- **Frontend:** React.js
 - **Database:** MySQL
 
 **Requirements:**
 
-1. **Virtual Environment:**
-   - Implement a virtual environment akin to Python's venv for this project. Is this feasible with the chosen stack?
+1. **Expandable:**
+   - Utilize the component functionality of React.js so that every user functionality and feature is a component that can individually updated and even leave room to add more components for more future feature updates.
 
 2. **Containerization:**
    - Deploy the web application using Kubernetes Helm for containerization.
@@ -18,6 +18,9 @@ Create a web application for task tracking using an Agile/Scrum approach, simila
 
 4. **Infrastructure Automation:**
    - Use automation tools like Ansible or Terraform to streamline infrastructure setup, ensuring reusability.
+
+5. **Complete:**
+   - Provide all code and apply all requested aspects and features of the application.
 
 **Backend:**
 - Design a modular and organized backend structure for easy management, scalability, and troubleshooting.
@@ -53,3 +56,6 @@ Create a web application for task tracking using an Agile/Scrum approach, simila
 - Assign members to cards, with permissions for self-assignment or by authorized users.
 - Account management features: password management, recovery, display name setup/change, email change.
 - Email notifications using Gmail SMTP.
+
+**Disclaimer:**
+- Despite being a complex request, provide everything to a complete build.
