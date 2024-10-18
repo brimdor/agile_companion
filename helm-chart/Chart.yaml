@@ -1,0 +1,4 @@
+apiVersion: v2
+name: task-tracking-app
+description: A Helm chart for the Task Tracking application
+version: 0.1.0

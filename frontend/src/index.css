@@ -1,0 +1,77 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  /* Rounded Edges and Drop Shadows */
+  .card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* High Contrast Mode */
+  .high-contrast {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .high-contrast .card {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  
+  .interactive-panel {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .panel-summary {
+    padding: 20px;
+    background-color: var(--primary-color, #007bff);
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .panel-content {
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .interactive-panel[aria-expanded="true"] .panel-content {
+    max-height: 200px; /* Adjust based on content */
+  }
+  
+  .task-board {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .task-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+  }
+  

@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  backend:
+    image: task-tracking-backend
+    environment:
+      - JWT_SECRET=/0vJjususNgqE2LjUH1yWWMhhboB0EbOpsRssDBN4PM=
+      - EMAIL_USER=your-email@gmail.com
+      - EMAIL_PASS=your-email-password
+      - SESSION_SECRET=fZ3edKIA+JRWXr9tPAkfHJ2R00YUIB6YFDimYNCi+fU=
+      - NODE_ENV=development
+      - DATABASE_HOST=db
+      - DATABASE_NAME=task_tracking
+      - DATABASE_USER=mysql
+      - DATABASE_PASSWORD=testing
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    command: sh -c "./tools/generate-ssl-cert.sh && ./tools/init-database.sh && node index.js"
+
+  frontend:
+    image: task-tracking-frontend
+    ports:
+      - "8080:80"
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: testing
+      MYSQL_DATABASE: task_tracking
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: testing
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./tools/mysql-init.sql:/docker-entrypoint-initdb.d/init.sql

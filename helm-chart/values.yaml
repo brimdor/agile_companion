@@ -1,0 +1,77 @@
+replicaCount: 2
+
+backend:
+  image:
+    repository: your-docker-repo/task-tracking-backend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 3000
+  env:
+    JWT_SECRET: your-jwt-secret
+    EMAIL_USER: your-email@gmail.com
+    EMAIL_PASS: your-email-password
+    SESSION_SECRET: your-session-secret
+    NODE_ENV: production
+    DATABASE_URL: mysql://user:password@host:port/database
+
+frontend:
+  image:
+    repository: your-docker-repo/task-tracking-frontend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  hosts:
+    - host: task-tracking.local
+      paths:
+        - /
+
+opSecret:
+  JWT_SECRET:
+    vault: ""
+    item: ""
+    secretName: "jwt-secret"
+    key: "JWT_SECRET"
+  EMAIL_USER:
+    vault: ""
+    item: ""
+    secretName: "email-user"
+    key: "EMAIL_USER"
+  EMAIL_PASS:
+    vault: ""
+    item: ""
+    secretName: "email-pass"
+    key: "EMAIL_PASS"
+  SESSION_SECRET:
+    vault: ""
+    item: ""
+    secretName: "session-secret"
+    key: "SESSION_SECRET"
+  NODE_ENV:
+    vault: ""
+    item: ""
+    secretName: "node-env"
+    key: "NODE_ENV"
+  DATABASE_URL:
+    vault: ""
+    item: ""
+    secretName: "database-url"
+    key: "DATABASE_URL"
+  DATABASE_USER:
+    vault: ""
+    item: ""
+    secretName: "database-user"
+    key: "DATABASE_USER"
+  DATABASE_PASSWORD:
+    vault: ""
+    item: ""
+    secretName: "database-password"
+    key: "DATABASE_PASSWORD"
