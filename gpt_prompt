@@ -11,7 +11,7 @@ Create a web application for task tracking using an Agile/Scrum approach, simila
    - Utilize the component functionality of React.js so that every user functionality and feature is a component that can individually updated and even leave room to add more components for more future feature updates.
 
 2. **Containerization:**
-   - Deploy the web application using Kubernetes Helm for containerization.
+   - Deploy the web application using Kubernetes Helm for containerization. Setting up a SQL container, Frontend Container, and Backend Container.
 
 3. **Development Environment:**
    - Utilize VS Code for development, with the terminal running on WSL (Ubuntu).
